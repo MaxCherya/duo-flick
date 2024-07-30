@@ -9,26 +9,29 @@ import logo from '../../imgs/logo.png'
 // styles
 import './home.scss'
 
+// components
+import Intro from '../../components/intro/intro';
+
 export default function Home() {
 
-    const [ref, inView] = useInView();
-    const [animate, setAnimate] = useState(false);
+    const [introComplete, setIntroComplete] = useState(false);
 
     useEffect(() => {
-        if (inView) {
-            setAnimate(true);
-        } else {
-            setAnimate(false);
-        }
-    }, [inView]);
+        const timer = setTimeout(() => {
+            setIntroComplete(true);
+        }, 10000); // 10 seconds
 
-  return (
-    <div>
-    <div style={{position:'relative'}}>
-        <div className='bg-gradient-origin z-0 bg-cover'>
-            <motion.p ref={ref} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className={`absolute top-5 left-5 text-base sm:text-xl md:text-3xl lg:text-5xl xl:text-9xl font-bold z-10 ${animate ? 'animate-shadow' : ''}`}>What's up?</motion.p>
+        return () => clearTimeout(timer); // Clear the timer if the component unmounts
+    }, []);
+
+    return (
+        <div className={`relative flex flex-col w-screen min-h-screen ${introComplete ? 'h-auto' : 'h-screen'}`}>
+            <Intro />
+            <span className='fixed top-0 left-0 right-0 bottom-0 h-full w-full bg-gradient-origin z-0'/>
+            <section className='flex flex-col align-middle items-center w-full h-full z-10'>
+                <img src={logo}/>
+                <p className=''>Start Now</p>
+            </section>
         </div>
-    </div>
-    </div>
-  )
+    )
 }

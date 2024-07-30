@@ -1,0 +1,11 @@
+$primary-color: #de263a;
+$secondary-color: #725eae;
+$third-color:#42a1fc;
+
+.bg-bright-blue {
+    background-image: linear-gradient(to right, #de263a, #da205b, #cd2c79, #b83e91, #9d4ea3, #8f5ab0, #7f64bb, #6d6ec3, #677bd2, #5e87e1, #5394ef, #42a1fc);
+}
+
+.bg-vibrant-red {
+    background-image: linear-gradient(to left, #de263a, #da205b, #cd2c79, #b83e91, #9d4ea3, #8f5ab0, #7f64bb, #6d6ec3, #677bd2, #5e87e1, #5394ef, #42a1fc);
+}
