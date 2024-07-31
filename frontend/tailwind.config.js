@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       fontFamily: {
         'Montserrat':["Montserrat", 'sans-serif'],
+        'Lato': ["Lato", 'sans-serif'],
+        'Oswald': ["Oswald", 'sans-serif'],
+        'RampartOne': ["Rampart One", 'sans-serif'],
       },
     },
   },
