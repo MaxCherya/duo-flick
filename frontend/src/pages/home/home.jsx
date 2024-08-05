@@ -34,7 +34,7 @@ export default function Home() {
                 <ul className='list-none flex flex-row items-center justify-evenly w-screen'>
                     <NavLink to="/"><li className='text-yellow-50'>| HOME |</li></NavLink>
                     <NavLink to="/news"><li className='text-yellow-50'>| NEWS |</li></NavLink>
-                    <NavLink to="/how-to-start"><li className='text-yellow-50'>| HOW TO START |</li></NavLink>
+                    <NavLink to="/how-to"><li className='text-yellow-50'>| HOW TO |</li></NavLink>
                     <NavLink to="/about"><li className='text-yellow-50'>| ABOUT |</li></NavLink>
                 </ul>
             </section>
