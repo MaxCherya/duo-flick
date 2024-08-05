@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
+import { Link, NavLink } from 'react-router-dom';
 
 // imgs
 import logo from '../../imgs/logo.png'
@@ -12,7 +13,6 @@ import './home.scss'
 
 // components
 import Intro from '../../components/intro/intro';
-import { NavLink } from 'react-router-dom';
 
 export default function Home() {
 
@@ -32,10 +32,10 @@ export default function Home() {
             <span className='fixed top-0 left-0 right-0 bottom-0 h-full w-full bg-gradient-origin-after z-10' />
             <section className='flex flex-row w-screen h-14 bg-black z-30 align-middle animation-fadeInTop'>
                 <ul className='list-none flex flex-row items-center justify-evenly w-screen'>
-                    <NavLink><li className='text-yellow-50'>| HOME |</li></NavLink>
-                    <NavLink><li className='text-yellow-50'>| NEWS |</li></NavLink>
-                    <NavLink><li className='text-yellow-50'>| HOW TO START |</li></NavLink>
-                    <NavLink><li className='text-yellow-50'>| ABOUT |</li></NavLink>
+                    <NavLink to="/"><li className='text-yellow-50'>| HOME |</li></NavLink>
+                    <NavLink to="/news"><li className='text-yellow-50'>| NEWS |</li></NavLink>
+                    <NavLink to="/how-to-start"><li className='text-yellow-50'>| HOW TO START |</li></NavLink>
+                    <NavLink to="/about"><li className='text-yellow-50'>| ABOUT |</li></NavLink>
                 </ul>
             </section>
             {introComplete ? null : <Intro />}
@@ -47,21 +47,21 @@ export default function Home() {
                     <div className='flex flex-row align-middle justify-evenly w-svw'>
                         <div className='flex flex-col items-center z-20 animation-fadeIn'>
                             <p className='font-Oswald text-xl'>Users</p>
-                            <CountUp className='font-RampartOne text-1xl' start={0} end={14213} delay={11} />
+                            <CountUp className='font-RampartOne text-1xl' start={0} end={14213} delay={12} />
                         </div>
                         <div className='flex flex-col items-center z-20 animation-fadeIn'>
                             <p className='font-Oswald text-xl'>Movies</p>
-                            <p className='font-RampartOne text-1xl'><CountUp start={0} end={1053233} delay={10} />+</p>
+                            <p className='font-RampartOne text-1xl'><CountUp start={0} end={1053233} delay={14} />+</p>
                         </div>
                         <div className='flex flex-col items-center z-20 animation-fadeIn'>
                             <p className='font-Oswald text-xl'>Fun</p>
-                            <p className='font-RampartOne text-1xl'><CountUp start={0} end={100} delay={12} />%</p>
+                            <p className='font-RampartOne text-1xl'><CountUp start={0} end={100} delay={16} />%</p>
                         </div>
                     </div>
                     <span className='absolute w-screen h-40 bg-white z-10 shapenation animation-flickerIn' />
                 </div>
             </section>
-            <button className='mt-16 btn-start font-Montserrat font-bold animation-bounceIn self-center z-10'>Start Now</button>
+            <Link to='/login' className='mt-16 btn-start font-Montserrat font-bold animation-bounceIn self-center text-center place-content-center z-10'>Start Now</Link>
         </div>
     )
 }
